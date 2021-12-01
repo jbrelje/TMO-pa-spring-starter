@@ -31,4 +31,10 @@ public class LibraryController {
         library.sortBooks();
         return library;
     }
+
+    @DeleteMapping("/api/books")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void emptyLibrary(){
+        library.setBooks(new ArrayList<>());
+    }
 }
